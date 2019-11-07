@@ -1,28 +1,28 @@
 
-#INITIALIZE
+# INITIALIZE
 Make sure you have Node installed. 
 Have Postgres ready.
 
-#Create a config file
+# Create a config file
 This should look like:
 Please call this config.json in the root directory.
-'''{
+```{
     "user": "postgres",
     "host": "localhost",
     "database": "guestbook",
     "password": "password123",
     "port": "5432"
-}'''
+}```
 
-#Creating the DB
+# Creating the DB
 Run 'npm run initDB'- should say 'success' on success
 
-#Running the program
+# Running the program
 Run 'npm start'
 Navitage to localhost:3000/index
 
 
-#VULNERABILITIES
+# VULNERABILITIES
 1) SQL INJECTION
 
 Choose anything for the username.
