@@ -1,0 +1,20 @@
+<html>
+    <h1>Hey, wassup!!</h1>
+    <body>
+        Wubba lubba dub dub. 
+        <form action="/createMessage" method='POST'>
+                Username: <br>
+                <input type="text" name="username"><br>
+                Post:<br>
+                <textarea type="text" name="postcontent" cols="50" rows="10">Enter stuff here</textarea>
+                <input type="submit" value = "Submit">
+        </form>    
+        <p><% for (const post of posts){%></p>
+            <div style="width:500px; height: 100px; border:1px solid #000;">
+                <p><b><%= post.username %> 
+                    <%= post.created_on %></b></p>
+                <p><%- post.post %></p>
+            </div>
+            <% } %>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+
+#INITIALIZE
+Make sure you have Node installed. 
+Have Postgres ready.
+
+#Create a config file
+This should look like:
+Please call this config.json in the root directory.
+'''{
+    "user": "postgres",
+    "host": "localhost",
+    "database": "guestbook",
+    "password": "password123",
+    "port": "5432"
+}'''
+
+#Creating the DB
+Run 'npm run initDB'- should say 'success' on success
+
+#Running the program
+Run 'npm start'
+Navitage to localhost:3000/index
+
+
+#VULNERABILITIES
+1) SQL INJECTION
+
+Choose anything for the username.
+In the Post body, try: maru', current_timestamp); DROP TABLE post; -- 
+There is a space at the end after -- .
+This should drop the table. 
+
+
+2) CROSS-SITE SCRIPTING
+In the post body, try:
+<script>alert("wassup")</script>
+<script>alert(document.cookie)</script>
+An alert should pop up. If it doesn't, try refreshing because there's a race condition
+where you get redirected before the query completes. 
+
+
